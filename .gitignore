@@ -7,7 +7,7 @@
 /wp-content/themes/*
 !/wp-content/plugins/multisite-anchors-settings/
 /wp-content/plugins/multisite-anchors-settings/.idea/
-/wp-content/plugins/multisite-anchors-settings/node-modules/
+/wp-content/plugins/multisite-anchors-settings/node_modules/
 /wp-content/plugins/multisite-anchors-settings/src/
 /wp-content/plugins/multisite-anchors-settings/vendor/
 /wp-content/plugins/multisite-anchors-settings/composer.*
