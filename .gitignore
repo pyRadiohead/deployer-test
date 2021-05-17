@@ -22,3 +22,4 @@
 /wp-*.php
 /wp-config.php
 /xmlrpc.php
+/vendor
