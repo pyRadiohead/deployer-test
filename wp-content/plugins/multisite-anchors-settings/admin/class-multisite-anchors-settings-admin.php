@@ -125,7 +125,7 @@ class Multisite_Anchors_Settings_Admin {
 				add_action('wp_ajax_no_priv_ajax_change_anchor', 'ajax_change_anchor');
 
 			function ajax_change_anchor() {
-
+					$test_id = false;
 					$blog_id = $_POST['blog_id'];
 					$post_id = $_POST['post_id'];
 					$current_anchor = trim($_POST['current_anchor']);

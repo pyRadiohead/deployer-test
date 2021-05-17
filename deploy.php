@@ -65,9 +65,9 @@ task('deploy', [
 //Install wordpress
 desc('Install WordPress');
 task('deploy:wp',
-'wp core download;');
+'touch test.txt;');
 
-after('deploy:writable', 'deploy:wp');
+//after('deploy:writable', 'deploy:wp');
 
 // [Optional] If deploy fails automatically unlock.
 after('deploy:failed', 'deploy:unlock');
