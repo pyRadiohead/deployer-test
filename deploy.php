@@ -35,10 +35,10 @@ set('allow_anonymous_stats', false);
 
 // Hosts
 
-host('production')
-	->hostname('207.154.209.72')
+host('deployer')
 	->port(22)
 	->user('deployer')
+	->configFile('~/.ssh/config')
 	->identityFile('~/.ssh/id_rsa')
 	->set('deploy_path', '/var/www/deployer')
 	->set('keep_releases', 3);
