@@ -1,0 +1,7 @@
+{
+  "require": {
+  },
+  "require-dev": {
+    "deployer/deployer": "^6.8"
+  }
+}
