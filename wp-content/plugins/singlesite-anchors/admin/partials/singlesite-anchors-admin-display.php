@@ -22,6 +22,7 @@ if ( isset( $_GET['link-pattern'] ) ) {
 }
 $my_posts = get_posts( array(
 	"post_type"   => array( 'page', 'post' ),
+	'post_status' => array('publish','future','private'),
 	'numberposts' => 100,
 	'orderby'     => 'date',
 	'order'       => 'ASC',
