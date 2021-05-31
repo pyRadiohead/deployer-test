@@ -47,7 +47,8 @@ if (isset($_GET['link-pattern'])) {
                 <ul class="mas-plugin-website__posts">
                     <?php $my_posts = get_posts(array (
                         "post_type" => array('page','post'),
-                        'numberposts' => -1,
+                        'post_status' => array('publish','private', 'future','pending'),
+                        'numberposts' => 30,
                         'orderby' =>'date',
                         'order' => 'ASC',
                     ));
