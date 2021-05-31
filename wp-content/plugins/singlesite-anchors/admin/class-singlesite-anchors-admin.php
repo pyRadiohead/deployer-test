@@ -113,8 +113,6 @@ class Singlesite_Anchors_Admin {
 				'capability',
 				'singlesite-anchors-settings',
 				'singlesite_anchors_settings_page',
-				'',
-				5.2
 			);
 		}
 		function singlesite_anchors_settings_page(){
