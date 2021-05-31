@@ -9,8 +9,8 @@
  * @link       internet-cossacks.com
  * @since      1.0.0
  *
- * @package    Multisite_Anchors_Settings
- * @subpackage Multisite_Anchors_Settings/includes
+ * @package    Singlesite_Anchors
+ * @subpackage Singlesite_Anchors/includes
  */
 
 /**
@@ -23,11 +23,11 @@
  * version of the plugin.
  *
  * @since      1.0.0
- * @package    Multisite_Anchors_Settings
- * @subpackage Multisite_Anchors_Settings/includes
- * @author     Yurii Kovalenko <ethingwillbefine@gmail.com>
+ * @package    Singlesite_Anchors
+ * @subpackage Singlesite_Anchors/includes
+ * @author     Yurii <ethingwillbefine@gmail.com>
  */
-class Multisite_Anchors_Settings {
+class Singlesite_Anchors {
 
 	/**
 	 * The loader that's responsible for maintaining and registering all hooks that power
@@ -35,7 +35,7 @@ class Multisite_Anchors_Settings {
 	 *
 	 * @since    1.0.0
 	 * @access   protected
-	 * @var      Multisite_Anchors_Settings_Loader    $loader    Maintains and registers all hooks for the plugin.
+	 * @var      Singlesite_Anchors_Loader    $loader    Maintains and registers all hooks for the plugin.
 	 */
 	protected $loader;
 
@@ -67,12 +67,12 @@ class Multisite_Anchors_Settings {
 	 * @since    1.0.0
 	 */
 	public function __construct() {
-		if ( defined( 'MULTISITE_ANCHORS_SETTINGS_VERSION' ) ) {
-			$this->version = MULTISITE_ANCHORS_SETTINGS_VERSION;
+		if ( defined( 'SINGLESITE_ANCHORS_VERSION' ) ) {
+			$this->version = SINGLESITE_ANCHORS_VERSION;
 		} else {
 			$this->version = '1.0.0';
 		}
-		$this->plugin_name = 'multisite-anchors-settings';
+		$this->plugin_name = 'singlesite-anchors';
 
 		$this->load_dependencies();
 		$this->set_locale();
@@ -86,10 +86,10 @@ class Multisite_Anchors_Settings {
 	 *
 	 * Include the following files that make up the plugin:
 	 *
-	 * - Multisite_Anchors_Settings_Loader. Orchestrates the hooks of the plugin.
-	 * - Multisite_Anchors_Settings_i18n. Defines internationalization functionality.
-	 * - Multisite_Anchors_Settings_Admin. Defines all hooks for the admin area.
-	 * - Multisite_Anchors_Settings_Public. Defines all hooks for the public side of the site.
+	 * - Singlesite_Anchors_Loader. Orchestrates the hooks of the plugin.
+	 * - Singlesite_Anchors_i18n. Defines internationalization functionality.
+	 * - Singlesite_Anchors_Admin. Defines all hooks for the admin area.
+	 * - Singlesite_Anchors_Public. Defines all hooks for the public side of the site.
 	 *
 	 * Create an instance of the loader which will be used to register the hooks
 	 * with WordPress.
@@ -103,33 +103,33 @@ class Multisite_Anchors_Settings {
 		 * The class responsible for orchestrating the actions and filters of the
 		 * core plugin.
 		 */
-		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/class-multisite-anchors-settings-loader.php';
+		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/class-singlesite-anchors-loader.php';
 
 		/**
 		 * The class responsible for defining internationalization functionality
 		 * of the plugin.
 		 */
-		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/class-multisite-anchors-settings-i18n.php';
+		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/class-singlesite-anchors-i18n.php';
 
 		/**
 		 * The class responsible for defining all actions that occur in the admin area.
 		 */
-		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'admin/class-multisite-anchors-settings-admin.php';
+		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'admin/class-singlesite-anchors-admin.php';
 
 		/**
 		 * The class responsible for defining all actions that occur in the public-facing
 		 * side of the site.
 		 */
-		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'public/class-multisite-anchors-settings-public.php';
+		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'public/class-singlesite-anchors-public.php';
 
-		$this->loader = new Multisite_Anchors_Settings_Loader();
+		$this->loader = new Singlesite_Anchors_Loader();
 
 	}
 
 	/**
 	 * Define the locale for this plugin for internationalization.
 	 *
-	 * Uses the Multisite_Anchors_Settings_i18n class in order to set the domain and to register the hook
+	 * Uses the Singlesite_Anchors_i18n class in order to set the domain and to register the hook
 	 * with WordPress.
 	 *
 	 * @since    1.0.0
@@ -137,7 +137,7 @@ class Multisite_Anchors_Settings {
 	 */
 	private function set_locale() {
 
-		$plugin_i18n = new Multisite_Anchors_Settings_i18n();
+		$plugin_i18n = new Singlesite_Anchors_i18n();
 
 		$this->loader->add_action( 'plugins_loaded', $plugin_i18n, 'load_plugin_textdomain' );
 
@@ -152,14 +152,12 @@ class Multisite_Anchors_Settings {
 	 */
 	private function define_admin_hooks() {
 
-		$plugin_admin = new Multisite_Anchors_Settings_Admin( $this->get_plugin_name(), $this->get_version() );
+		$plugin_admin = new Singlesite_Anchors_Admin( $this->get_plugin_name(), $this->get_version() );
 
-		$this->loader->add_action( 'admin_enqueue_scripts', $plugin_admin, 'enqueue_styles' );
-		$this->loader->add_action( 'admin_enqueue_scripts', $plugin_admin, 'enqueue_scripts' );
-		$this->loader->add_action('init', $plugin_admin, 'create_menu');
-		$this->loader->add_action('init', $plugin_admin, 'ajax_request');
-
-
+		$this->loader->add_action( 'admin_enqueue_scripts', $plugin_admin, 'singlesite_anchors_enqueue_styles' );
+		$this->loader->add_action( 'admin_enqueue_scripts', $plugin_admin, 'singlesite_anchors_enqueue_scripts' );
+		$this->loader->add_action('init', $plugin_admin, 'singlesite_anchors_create_plugin_menu');
+		$this->loader->add_action('init', $plugin_admin, 'singlesite_anchors_ajax_anchor_change');
 
 	}
 
@@ -172,7 +170,7 @@ class Multisite_Anchors_Settings {
 	 */
 	private function define_public_hooks() {
 
-		$plugin_public = new Multisite_Anchors_Settings_Public( $this->get_plugin_name(), $this->get_version() );
+		$plugin_public = new Singlesite_Anchors_Public( $this->get_plugin_name(), $this->get_version() );
 
 		$this->loader->add_action( 'wp_enqueue_scripts', $plugin_public, 'enqueue_styles' );
 		$this->loader->add_action( 'wp_enqueue_scripts', $plugin_public, 'enqueue_scripts' );
@@ -203,7 +201,7 @@ class Multisite_Anchors_Settings {
 	 * The reference to the class that orchestrates the hooks with the plugin.
 	 *
 	 * @since     1.0.0
-	 * @return    Multisite_Anchors_Settings_Loader    Orchestrates the hooks of the plugin.
+	 * @return    Singlesite_Anchors_Loader    Orchestrates the hooks of the plugin.
 	 */
 	public function get_loader() {
 		return $this->loader;

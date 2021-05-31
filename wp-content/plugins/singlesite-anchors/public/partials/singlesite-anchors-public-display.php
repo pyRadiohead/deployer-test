@@ -8,8 +8,8 @@
  * @link       internet-cossacks.com
  * @since      1.0.0
  *
- * @package    Multisite_Anchors_Settings
- * @subpackage Multisite_Anchors_Settings/public/partials
+ * @package    Singlesite_Anchors
+ * @subpackage Singlesite_Anchors/public/partials
  */
 ?>
 

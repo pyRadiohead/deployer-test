@@ -6,8 +6,8 @@
  * @link       internet-cossacks.com
  * @since      1.0.0
  *
- * @package    Multisite_Anchors_Settings
- * @subpackage Multisite_Anchors_Settings/includes
+ * @package    Singlesite_Anchors
+ * @subpackage Singlesite_Anchors/includes
  */
 
 /**
@@ -17,11 +17,11 @@
  * the plugin, and register them with the WordPress API. Call the
  * run function to execute the list of actions and filters.
  *
- * @package    Multisite_Anchors_Settings
- * @subpackage Multisite_Anchors_Settings/includes
- * @author     Yurii Kovalenko <ethingwillbefine@gmail.com>
+ * @package    Singlesite_Anchors
+ * @subpackage Singlesite_Anchors/includes
+ * @author     Yurii <ethingwillbefine@gmail.com>
  */
-class Multisite_Anchors_Settings_Loader {
+class Singlesite_Anchors_Loader {
 
 	/**
 	 * The array of actions registered with WordPress.

@@ -6,8 +6,8 @@
  * @link       internet-cossacks.com
  * @since      1.0.0
  *
- * @package    Multisite_Anchors_Settings
- * @subpackage Multisite_Anchors_Settings/public
+ * @package    Singlesite_Anchors
+ * @subpackage Singlesite_Anchors/public
  */
 
 /**
@@ -16,11 +16,11 @@
  * Defines the plugin name, version, and two examples hooks for how to
  * enqueue the public-facing stylesheet and JavaScript.
  *
- * @package    Multisite_Anchors_Settings
- * @subpackage Multisite_Anchors_Settings/public
- * @author     Yurii Kovalenko <ethingwillbefine@gmail.com>
+ * @package    Singlesite_Anchors
+ * @subpackage Singlesite_Anchors/public
+ * @author     Yurii <ethingwillbefine@gmail.com>
  */
-class Multisite_Anchors_Settings_Public {
+class Singlesite_Anchors_Public {
 
 	/**
 	 * The ID of this plugin.
@@ -65,15 +65,15 @@ class Multisite_Anchors_Settings_Public {
 		 * This function is provided for demonstration purposes only.
 		 *
 		 * An instance of this class should be passed to the run() function
-		 * defined in Multisite_Anchors_Settings_Loader as all of the hooks are defined
+		 * defined in Singlesite_Anchors_Loader as all of the hooks are defined
 		 * in that particular class.
 		 *
-		 * The Multisite_Anchors_Settings_Loader will then create the relationship
+		 * The Singlesite_Anchors_Loader will then create the relationship
 		 * between the defined hooks and the functions defined in this
 		 * class.
 		 */
 
-		wp_enqueue_style( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'css/multisite-anchors-settings-public.css', array(), $this->version, 'all' );
+		wp_enqueue_style( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'css/singlesite-anchors-public.css', array(), $this->version, 'all' );
 
 	}
 
@@ -88,15 +88,15 @@ class Multisite_Anchors_Settings_Public {
 		 * This function is provided for demonstration purposes only.
 		 *
 		 * An instance of this class should be passed to the run() function
-		 * defined in Multisite_Anchors_Settings_Loader as all of the hooks are defined
+		 * defined in Singlesite_Anchors_Loader as all of the hooks are defined
 		 * in that particular class.
 		 *
-		 * The Multisite_Anchors_Settings_Loader will then create the relationship
+		 * The Singlesite_Anchors_Loader will then create the relationship
 		 * between the defined hooks and the functions defined in this
 		 * class.
 		 */
 
-		wp_enqueue_script( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'js/multisite-anchors-settings-public.js', array( 'jquery' ), $this->version, false );
+		wp_enqueue_script( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'js/singlesite-anchors-public.js', array( 'jquery' ), $this->version, false );
 
 	}
 

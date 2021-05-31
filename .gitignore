@@ -14,6 +14,15 @@
 /wp-content/plugins/multisite-anchors-settings/package.*
 /wp-content/plugins/multisite-anchors-settings/webpack.mix.js
 /wp-content/plugins/multisite-anchors-settings/mix-manifest.json
+!/wp-content/plugins/singlesite-anchors/
+/wp-content/plugins/singlesite-anchors/.idea/
+/wp-content/plugins/singlesite-anchors/node_modules/
+/wp-content/plugins/singlesite-anchors/src/
+/wp-content/plugins/singlesite-anchors/vendor/
+/wp-content/plugins/singlesite-anchors/composer.*
+/wp-content/plugins/singlesite-anchors/package.*
+/wp-content/plugins/singlesite-anchors/webpack.mix.js
+/wp-content/plugins/singlesite-anchors/mix-manifest.json
 !/wp-content/themes/twentytwentyone/
 /wp-includes/
 /index.php
